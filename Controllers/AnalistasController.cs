@@ -25,9 +25,40 @@ namespace Qualinea.Controllers
         }
         
         [HttpGet("{id}")]
-        public async Task<ActionResult<Analista>> GetAnalista(int id)
+        public async Task<ActionResult<Analista>> GetAnalistas(int id)
         {
             return await _analistaRepository.Get(id);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Analista>> PostAnalistas([FromBody] Analista analista)
+        {
+            var newAnalista = await _analistaRepository.Create(analista);
+            return CreatedAtAction(nameof(GetAnalistas), new { id = newAnalista.Id}, newAnalista);
+        }
+        
+        [HttpPut]
+        public async Task<ActionResult> PutAnalistas(int id, [FromBody] Analista analista)
+        {
+            if (id != analista.Id) {
+                return BadRequest();
+            }
+
+            await _analistaRepository.Update(analista);
+
+            return NoContent();
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteAnalistas(int id)
+        {
+            var analistaToDelete = await _analistaRepository.Get(id);
+            if (analistaToDelete == null) {
+                return NotFound();
+            }
+
+            await _analistaRepository.Detete(analistaToDelete.Id);
+            return NoContent();
         }
     }
 }
