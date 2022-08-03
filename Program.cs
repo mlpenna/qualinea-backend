@@ -12,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAnalistaRepository, AnalistaRepository>();
 builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+builder.Services.AddScoped<IInsumoRepository, InsumoRepository>();
 builder.Services.AddDbContext<DataDbContext>(o => o.UseSqlite(@"Data Source=appdb.db"));
 
 var app = builder.Build();

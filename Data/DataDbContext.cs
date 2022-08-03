@@ -16,5 +16,6 @@ namespace Qualinea.Data
         }
         public DbSet<Analista> Analistas { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Insumo> Insumos { get; set; }
     }
 }
