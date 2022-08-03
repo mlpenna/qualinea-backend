@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Qualinea.Data;
 
@@ -10,9 +11,10 @@ using Qualinea.Data;
 namespace Qualinea.Migrations
 {
     [DbContext(typeof(DataDbContext))]
-    partial class DataDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220803214150_migration4")]
+    partial class migration4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.7");
@@ -74,25 +76,25 @@ namespace Qualinea.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<float?>("Brix")
+                    b.Property<float>("Brix")
                         .HasColumnType("REAL");
 
-                    b.Property<int?>("Cor")
+                    b.Property<int>("Cor")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CorConcentrado")
+                    b.Property<int>("CorConcentrado")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CorDiluicao")
+                    b.Property<int>("CorDiluicao")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("DataRegistro")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Dimensao")
+                    b.Property<int>("Dimensao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Granulometria")
+                    b.Property<int>("Granulometria")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("IdAnalista")
@@ -104,64 +106,67 @@ namespace Qualinea.Migrations
                     b.Property<int>("IdInsumo")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("InspecaoVisual")
+                    b.Property<int>("InspecaoVisual")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Lote")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Medida")
+                    b.Property<int>("Medida")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("NotaFiscal")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Observacoes")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Odor")
+                    b.Property<int>("Odor")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("OdorConcentrado")
+                    b.Property<int>("OdorConcentrado")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("OdorDiluicao")
+                    b.Property<int>("OdorDiluicao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float?>("Particulas")
+                    b.Property<float>("Particulas")
                         .HasColumnType("REAL");
 
-                    b.Property<float?>("Peso")
+                    b.Property<float>("Peso")
                         .HasColumnType("REAL");
 
-                    b.Property<float?>("Ph")
+                    b.Property<float>("Ph")
                         .HasColumnType("REAL");
 
                     b.Property<int>("ResultadoFinal")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Sabor")
+                    b.Property<int>("Sabor")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("SaborDiluicao")
+                    b.Property<int>("SaborDiluicao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("Solidificacao")
+                    b.Property<int>("Solidificacao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float?>("Temperatura")
+                    b.Property<float>("Temperatura")
                         .HasColumnType("REAL");
 
-                    b.Property<int?>("Textura")
+                    b.Property<int>("Textura")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float?>("Umidade")
+                    b.Property<float>("Umidade")
                         .HasColumnType("REAL");
 
-                    b.Property<int?>("Vedacao")
+                    b.Property<int>("Vedacao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<float?>("Viscosidade")
+                    b.Property<float>("Viscosidade")
                         .HasColumnType("REAL");
 
                     b.HasKey("Id");

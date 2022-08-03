@@ -10,9 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddScoped<IAnalistaRepository, AnalistaRepository>();
 builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
 builder.Services.AddScoped<IInsumoRepository, InsumoRepository>();
+builder.Services.AddScoped<IRegistroLaudoRepository, RegistroLaudoRepository>();
 builder.Services.AddDbContext<DataDbContext>(o => o.UseSqlite(@"Data Source=appdb.db"));
 
 var app = builder.Build();

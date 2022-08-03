@@ -14,7 +14,7 @@ namespace Qualinea.Models
     }
 
     public enum EmbMp {
-        Emabalagem,
+        Embalagem,
         MP
     }
 }
